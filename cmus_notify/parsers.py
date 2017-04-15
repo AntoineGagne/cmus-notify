@@ -21,7 +21,7 @@
 """Contains the code related to parsing Cmus output."""
 
 from collections import defaultdict
-from functools import reduce
+from functools import reduce, partial
 
 from .constants import FIELDS
 from .types import StatusInformation
@@ -48,6 +48,9 @@ def parse_status_information(informations):
         status_information,
         _format_artist_field,
         _format_duration_field,
+        partial(_format_integer_field, 'tracknumber'),
+        partial(_format_integer_field, 'discnumber'),
+        _format_status_field,
         _format_left_fields
     )
 
@@ -99,6 +102,37 @@ def _format_duration_field(status_information):
         )
     except ValueError:
         status_information.pop('duration', None)
+
+    return status_information
+
+
+def _format_status_field(status_information):
+    """Format the *status* field.
+
+    :param status_information: The various fields information
+    :type status_information: :class:`collections.defaultdict`
+    :returns: The updated status informations
+    :rtype: :class:`collections.defaultdict`
+    """
+    status_information['status'] = (' '.join(status_information['status'])
+                                       .capitalize())
+    return status_information
+
+
+def _format_integer_field(field_name, status_information):
+    """Format an integer field.
+
+    :param field_name: The name of the field
+    :type field_name: str
+    :param status_information: The various fields information
+    :type status_information: :class:`collections.defaultdict`
+    :returns: The updated status informations
+    :rtype: :class:`collections.defaultdict`
+    """
+    try:
+        status_information[field_name] = int(''.join(status_information[field_name]))
+    except ValueError:
+        status_information.pop(field_name, None)
 
     return status_information
 
