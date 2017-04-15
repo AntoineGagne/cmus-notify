@@ -18,13 +18,31 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 # OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-"""Main program"""
+"""Contains the constants used by the library."""
 
-import sys
-
-
-if __name__ == '__main__':
-    INFORMATION = parse_status_information(sys.argv[1].split())
-    TITLE, TEXT = format_notification_message(INFORMATION)
-    NOTIFIER = Notifier(DEFAULT_APPLICATION_NAME)
-    NOTIFIER.send_notification(TITLE, TEXT, icon_path=ICONS_BY_STATUS.get(STATUS_INFORMATION.status, ''))
+#: Default text for the display values
+DEFAULT_STATUS_DISPLAY = 'N/A'
+#: The various field contained in the metadata
+FIELDS = (
+    'status',
+    'file',
+    'artist',
+    'album',
+    'discnumber',
+    'tracknumber',
+    'title',
+    'date',
+    'duration'
+)
+#: The icons by the media player status
+ICONS_BY_STATUS = {
+    'paused': 'stock_media-pause',
+    'playing': 'stock_media-play',
+    'stopped': 'stock_media-stop'
+}
+#: The icon's path to be used by default
+DEFAULT_ICON_PATH = ''
+#: The default timeout for the notification to disappear
+DEFAULT_TIMEOUT = 5000
+#: The default name of the application
+DEFAULT_APPLICATION_NAME = 'Cmus'
