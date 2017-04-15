@@ -46,3 +46,13 @@ DEFAULT_ICON_PATH = ''
 DEFAULT_TIMEOUT = 5000
 #: The default name of the application
 DEFAULT_APPLICATION_NAME = 'Cmus'
+#: The default message body of the notifications
+DEFAULT_MESSAGE_BODY = ('<b>Title:</b> {title}\n'
+                        '<b>Artist:</b> {artist}\n'
+                        '<b>Album:</b> {album}\n'
+                        '<b>Date:</b> {date}\n'
+                        '<b>Track:</b> {tracknumber}\n'
+                        '<b>Disc:</b> {discnumber}\n'
+                        '<b>Duration:</b> {duration}')
+#: The default message title of the notifications
+DEFAULT_MESSAGE_TITLE = 'Current Status: {status}'

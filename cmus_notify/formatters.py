@@ -20,28 +20,17 @@
 
 """Contains code to format the current status of Cmus."""
 
+from .constants import DEFAULT_MESSAGE_BODY, DEFAULT_MESSAGE_TITLE
 
-def format_notification_message(status_information):
+
+def format_notification_message(status_information, **kwargs):
     """Format the :class:`StatusInformation` to be send.
 
     :param status_information: The information to be sent
     :type status_information: :class:`StatusInformation`
     """
-    title = 'Current Status: {0}'.format(
-        status_information.status.capitalize(),
-    )
-    text = ('<b>Title:</b> {0}\n'
-            '<b>Artist:</b> {1}\n'
-            '<b>Album:</b> {2}\n'
-            '<b>Date:</b> {3}\n'
-            '<b>Track:</b> {4}\n'
-            '<b>Disc:</b> {5}\n'
-            '<b>Duration:</b> {6}').format(
-                status_information.title,
-                status_information.artist,
-                status_information.album,
-                status_information.date,
-                status_information.tracknumber,
-                status_information.discnumber,
-                status_information.duration)
+    title = (kwargs.get('title', DEFAULT_MESSAGE_TITLE)
+                   .format(**status_information.__dict__))
+    text = (kwargs.get('body', DEFAULT_MESSAGE_BODY)
+                  .format(**status_information.__dict__))
     return title, text
