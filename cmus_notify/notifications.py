@@ -43,7 +43,6 @@ class Notifier:
         :type title: str
         :param text: The message's body
         :type text: str
-        :raises ImportError: If the library :module:`notify` is not installed
         """
         notify2.init(self.application_name)
         notification = notify2.Notification(
