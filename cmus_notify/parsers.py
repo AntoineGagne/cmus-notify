@@ -37,7 +37,7 @@ def parse_status_information(informations):
     fields = set(FIELDS)
     status_information = defaultdict(list)
     current_status = None
-    for word in informations:
+    for word in informations.split():
         if word in FIELDS:
             current_status = word
             fields.remove(word)

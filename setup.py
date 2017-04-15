@@ -20,7 +20,7 @@ if __name__ == '__main__':
         name='cmus-notify',
         version='0.0.0.1',
         description='A package for displaying Cmus current status in notifications',
-        author='Antoine Gagne'
+        author='Antoine Gagne',
         keywords='utilities application cli hook',
         author_email='antoine.gagne.2@ulaval.ca',
         url='https://github.com/AntoineGagne/cmus-notify',
