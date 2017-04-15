@@ -46,4 +46,3 @@ clean:
 	@find . -name '__pycache__' -exec rm -rf {} \;
 	@rm -rf samples/
 	@rm -rf data/
-	@$(MAKE) -C $(DOCUMENTATION_DIRECTORY) clean
