@@ -22,10 +22,19 @@
 
 import sys
 
+from .constants import DEFAULT_APPLICATION_NAME, ICONS_BY_STATUS
+from .formatters import format_notification_message
+from .notifications import Notifier
+from .parsers import parse_status_information
+
 
 def main():
     """Main entry point of the package."""
-    INFORMATION = parse_status_information(sys.argv[1])
-    TITLE, TEXT = format_notification_message(INFORMATION)
-    NOTIFIER = Notifier(DEFAULT_APPLICATION_NAME)
-    NOTIFIER.send_notification(TITLE, TEXT, icon_path=ICONS_BY_STATUS.get(STATUS_INFORMATION.status, ''))
+    information = parse_status_information(sys.argv[1])
+    title, text = format_notification_message(information)
+    notifier = Notifier(DEFAULT_APPLICATION_NAME)
+    notifier.send_notification(
+        title,
+        text,
+        icon_path=ICONS_BY_STATUS.get(information.status, '')
+    )

@@ -25,6 +25,9 @@ if __name__ == '__main__':
         author_email='antoine.gagne.2@ulaval.ca',
         url='https://github.com/AntoineGagne/cmus-notify',
         packages=['cmus_notify'],
+        entry_points={
+            'console_scripts': ['cmus_notify = cmus_notify.cmus_notify:main']
+        },
         data_files=[],
         include_package_data=True,
         long_description=get_long_description('README.md'),
