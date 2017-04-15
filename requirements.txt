@@ -1,0 +1,5 @@
+pytest
+coverage
+Sphinx
+notify2
+flake8
