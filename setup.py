@@ -28,11 +28,20 @@ if __name__ == '__main__':
         entry_points={
             'console_scripts': ['cmus_notify = cmus_notify.cmus_notify:main']
         },
+        license='MIT',
         data_files=[],
         include_package_data=True,
-        long_description=get_long_description('README.md'),
+        long_description=get_long_description('README.rst'),
         setup_requires=['pytest-runner', 'flake8'],
         tests_require=['pytest'],
         test_suite='tests',
-        scripts=[]
+        scripts=[],
+        classifiers=[
+            'License :: OSI Approved :: MIT License',
+            'Development Status :: 5 - Production/Stable',
+            'Operating System :: POSIX :: Linux',
+            'Programming Language :: Python :: 3.5',
+            'Topic :: Multimedia :: Sound/Audio'
+        ],
+        install_requires=['notify2>=0.3']
     )
