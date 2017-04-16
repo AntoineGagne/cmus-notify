@@ -1,10 +1,16 @@
+===========
 cmus-notify
 ===========
 
-A program that can be hooked to the `Cmus Music Player <https://cmus.github.io/>`_ to display its current status in a notification.
+:Author: `Antoine Gagné <antoine.gagne.2@ulaval.ca>`_
+
+.. contents::
+    :backlinks: none
+
+.. sectnum::
 
 Requirements
-------------
+============
 
 To install this program, you must have the following:
 
@@ -13,7 +19,7 @@ To install this program, you must have the following:
 - ``notify-send``
 
 Installation
-------------
+============
 
 To install this program, you can simply run the following command:
 
@@ -30,7 +36,7 @@ You can check if it installed correctly by doing the following command:
 It should display a message.
 
 Hooking To Cmus
----------------
+===============
 
 To hook this program to ``cmus``, you have to create a shell script that have the following lines in it:
 
@@ -53,7 +59,7 @@ Finally, once you are in ``cmus``, you can add the hook by using the following c
     :set status_display_program=<path-to-the-shell-script>
 
 Customization
--------------
+=============
 
 If you want you can specify the formatting of the notification by specifying format strings. For example:
 
@@ -64,7 +70,7 @@ If you want you can specify the formatting of the notification by specifying for
     cmus_notify --title "Now playing: {title} by {artist}" --body "<b>Album:</b> {album}\n<b>Duration:</b> {duration}" "$*"
 
 Options
--------
+=======
 
 To view the full options, you can run the following command:
 
