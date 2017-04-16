@@ -18,11 +18,13 @@ Installation
 To install this program, you can simply run the following command:
 
 ::
+
     python setup.py install
 
 You can check if it installed correctly by doing the following command:
 
 ::
+
     cmus_notify -h
 
 It should display a message.
@@ -33,6 +35,7 @@ Hooking To Cmus
 To hook this program to ``cmus``, you have to create a shell script that have the following lines in it:
 
 ::
+
     #! /bin/sh
 
     cmus_notify "$*" &
@@ -40,11 +43,13 @@ To hook this program to ``cmus``, you have to create a shell script that have th
 Then, you must make the file executable by using the following command (assuming your script's name is ``cmus_notify.sh``):
 
 ::
+
     chmod +x cmus_notify.sh
 
 Finally, once you are in ``cmus``, you can add the hook by using the following command:
 
 ::
+
     :set status_display_program=<path-to-the-shell-script>
 
 Customization
@@ -53,6 +58,7 @@ Customization
 If you want you can specify the formatting of the notification by specifying format strings. For example:
 
 ::
+
     #! /bin/sh
 
     cmus_notify --title "Now playing: {title} by {artist}" --body "<b>Album:</b> {album}\n<b>Duration:</b> {duration}" "$*"
@@ -63,11 +69,13 @@ Options
 To view the full options, you can run the following command:
 
 ::
+
     cmus_notify --help
 
 which will display the following prompt:
 
 ::
+
     usage: cmus_notify [-h] [-a APPLICATION_NAME] [-b BODY_FORMAT_STRING]
                        [-t TITLE_FORMAT_STRING]
                        INFORMATION
