@@ -4,10 +4,7 @@ from argparse import (RawDescriptionHelpFormatter,
                       ArgumentParser,
                       SUPPRESS)
 
-from .constants import (DEFAULT_APPLICATION_NAME,
-                        DEFAULT_CONFIGURATION_FILE,
-                        DEFAULT_MESSAGE_BODY,
-                        DEFAULT_MESSAGE_TITLE)
+from .constants import DEFAULT_CONFIGURATION_FILE
 
 
 def parse_arguments():
