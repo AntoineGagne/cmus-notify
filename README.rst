@@ -69,6 +69,20 @@ If you want you can specify the formatting of the notification by specifying for
 
     cmus_notify --title "Now playing: {title} by {artist}" --body "<b>Album:</b> {album}\n<b>Duration:</b> {duration}" "$*"
 
+You can also specify a configuration to read these values from. By default, the program will search for a configuration file named ``~/.cmus-notify``. It has the following format:
+
+::
+
+    [notifications]
+        application_name = Cmus
+
+    [format]
+        title = Now playing: {title} by {artist}
+        body = <b>Album:</b> {album}
+            <b>Duration:</b> {duration}
+
+The options accepts the same values as their command-line options equivalent.
+
 Options
 =======
 
@@ -83,7 +97,7 @@ which will display the following prompt:
 ::
 
     usage: cmus_notify [-h] [-a APPLICATION_NAME] [-b BODY_FORMAT_STRING]
-                       [-t TITLE_FORMAT_STRING]
+                       [-t TITLE_FORMAT_STRING] [-f CONFIGURATION_FILE]
                        INFORMATION
 
     Display a notification about Cmus's current status
@@ -107,6 +121,10 @@ which will display the following prompt:
                             same as Python's. The available options are specified
                             at the end of this help message. (i.e. 'Now playing:
                             {title}')
+      -f CONFIGURATION_FILE, --configuration_file CONFIGURATION_FILE
+                            The path to the configuration file. If it is not
+                            specified, the program will use the default values of
+                            the other options.
 
     Format String Parameters
     ========================
