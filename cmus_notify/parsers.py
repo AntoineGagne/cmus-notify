@@ -125,6 +125,8 @@ def _format_left_fields(status_information):
     :rtype: :class:`collections.defaultdict`
     """
     for key, value in status_information.copy().items():
-        if isinstance(value, list):
+        if isinstance(value, list) and value:
             status_information[key] = ' '.join(value)
+        elif not value:
+            status_information.pop(key, None)
     return status_information
