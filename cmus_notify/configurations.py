@@ -2,7 +2,7 @@
 
 from configparser import ConfigParser
 
-from .constants import CONFIGURATION_SECTIONS
+from .constants import CONFIGURATION_SECTIONS, DEFAULT_OPTIONS
 from .options import parse_arguments
 
 
@@ -19,6 +19,8 @@ def parse_configuration_file():
     if configuration_parser.read(arguments.configuration_file):
         for section in CONFIGURATION_SECTIONS:
             options.update(dict(configuration_parser.items(section)))
+    else:
+        options.update(DEFAULT_OPTIONS)
 
     options.update(vars(arguments))
     return options

@@ -1,6 +1,8 @@
 """Contains the code related to options parsing."""
 
-from argparse import RawDescriptionHelpFormatter, ArgumentParser
+from argparse import (RawDescriptionHelpFormatter,
+                      ArgumentParser,
+                      SUPPRESS)
 
 from .constants import (DEFAULT_APPLICATION_NAME,
                         DEFAULT_CONFIGURATION_FILE,
@@ -34,14 +36,14 @@ def parse_arguments():
                         help='Parse the given information')
     parser.add_argument('-a',
                         '--application_name',
-                        default=DEFAULT_APPLICATION_NAME,
+                        default=SUPPRESS,
                         type=str,
                         help='The name of the application')
     parser.add_argument('-b',
                         '--body',
                         required=False,
                         metavar='BODY_FORMAT_STRING',
-                        default=DEFAULT_MESSAGE_BODY,
+                        default=SUPPRESS,
                         type=str,
                         help='A format string that can be specified to tell the'
                              ' software how to format the body. The syntax is '
@@ -52,7 +54,7 @@ def parse_arguments():
                         '--title',
                         required=False,
                         metavar='TITLE_FORMAT_STRING',
-                        default=DEFAULT_MESSAGE_TITLE,
+                        default=SUPPRESS,
                         type=str,
                         help='A format string that can be specified to tell the'
                              ' software how to format the title. The syntax is '
