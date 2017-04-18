@@ -11,7 +11,7 @@ def parse_status_information(informations):
     """Parse the status informations from the informations list.
 
     :param informations: The list containing the various song's information
-    :type informations: list<str>
+    :type informations: str
     :returns: :class:`collections.defaultdict`
     """
     fields = set(FIELDS)

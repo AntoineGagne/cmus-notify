@@ -4,10 +4,10 @@ from .constants import DEFAULT_MESSAGE_BODY, DEFAULT_MESSAGE_TITLE
 
 
 def format_notification_message(status_information, **kwargs):
-    """Format the :class:`StatusInformation` to be send.
+    """Format the :class:`cmus_notify.types.StatusInformation` to be send.
 
     :param status_information: The information to be sent
-    :type status_information: :class:`StatusInformation`
+    :type status_information: :class:`cmus_notify.types.StatusInformation`
     """
     title = (kwargs.get('title', DEFAULT_MESSAGE_TITLE)
                    .format(**status_information.__dict__))

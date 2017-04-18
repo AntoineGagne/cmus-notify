@@ -12,6 +12,14 @@ cmus\_notify\.cmus\_notify module
     :undoc-members:
     :show-inheritance:
 
+cmus\_notify\.configurations module
+-----------------------------------
+
+.. automodule:: cmus_notify.configurations
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 cmus\_notify\.constants module
 ------------------------------
 
@@ -32,6 +40,14 @@ cmus\_notify\.notifications module
 ----------------------------------
 
 .. automodule:: cmus_notify.notifications
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cmus\_notify\.options module
+----------------------------
+
+.. automodule:: cmus_notify.options
     :members:
     :undoc-members:
     :show-inheritance:

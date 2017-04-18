@@ -6,10 +6,13 @@ from .constants import DEFAULT_ICON_PATH, DEFAULT_TIMEOUT
 
 
 class Notifier:
-    """A notification to the Gnome notification system."""
+    """Notifies the system with a notification.
+    
+    .. note:: Currently, it only works on Linux
+    """
 
     def __init__(self, application_name):
-        """Initialize a :class:`Notification` object.
+        """Initialize a :class:`cmus_notify.notifications.Notifier` object.
 
         :param application_name: The application's name
         :type application_name: str
