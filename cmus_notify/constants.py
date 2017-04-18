@@ -36,3 +36,10 @@ DEFAULT_MESSAGE_BODY = ('<b>Title:</b> {title}\n'
                         '<b>Duration:</b> {duration}')
 #: The default message title of the notifications
 DEFAULT_MESSAGE_TITLE = 'Current Status: {status}'
+#: The default path of the configuration file
+DEFAULT_CONFIGURATION_FILE = '~/.cmus-notify'
+#: The various configuration sections
+CONFIGURATION_SECTIONS = (
+    'notifications',
+    'format'
+)
