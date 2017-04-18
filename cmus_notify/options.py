@@ -1,5 +1,12 @@
 """Contains the code related to options parsing."""
 
+from argparse import RawDescriptionHelpFormatter, ArgumentParser
+
+from .constants import (DEFAULT_APPLICATION_NAME,
+                        DEFAULT_CONFIGURATION_FILE,
+                        DEFAULT_MESSAGE_BODY,
+                        DEFAULT_MESSAGE_TITLE)
+
 
 def parse_arguments():
     """Create an :class:`argparse.ArgumentParser` and parse the command-line arguments."""
@@ -52,4 +59,12 @@ def parse_arguments():
                              'the same as Python\'s. The available options are '
                              'specified at the end of this help message. (i.e. '
                              '\'Now playing: {title}\')')
+    parser.add_argument('-f',
+                        '--configuration_file',
+                        required=False,
+                        default=DEFAULT_CONFIGURATION_FILE,
+                        type=str,
+                        help='The path to the configuration file. If it is not '
+                             'specified, the program will use the default '
+                             'values of the other options.')
     return parser.parse_args()
