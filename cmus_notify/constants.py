@@ -43,3 +43,10 @@ CONFIGURATION_SECTIONS = (
     'notifications',
     'format'
 )
+#: The various options
+DEFAULT_OPTIONS = {
+    'body': DEFAULT_MESSAGE_BODY,
+    'title': DEFAULT_MESSAGE_TITLE,
+    'application_name': DEFAULT_APPLICATION_NAME,
+    'timeout': DEFAULT_TIMEOUT
+}
