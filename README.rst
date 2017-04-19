@@ -27,6 +27,12 @@ To install this program, you can simply run the following command:
 
     python setup.py install
 
+This program can also be found on `Pypi <https://pypi.python.org/pypi?:action=display&name=cmus-notify>` which means you can install it by downloading the wheel or by using the following command:
+
+::
+
+    pip install cmus-notify
+
 You can check if it installed correctly by doing the following command:
 
 ::
@@ -140,3 +146,8 @@ which will display the following prompt:
       - status: Cmus current status
       - title: The song's title
       - tracknumber: The song's track number
+
+Documentation
+=============
+
+The project's documentation can be found `here <http://pythonhosted.org/cmus-notify/>`.
