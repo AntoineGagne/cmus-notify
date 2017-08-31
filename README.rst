@@ -109,7 +109,7 @@ which will display the following prompt:
 
 ::
 
-    usage: cmus_notify [-h] [-a APPLICATION_NAME] [- BODY_FORMAT_STRING]
+    usage: cmus_notify [-h] [-a APPLICATION_NAME] [-b BODY_FORMAT_STRING]
                        [-t TITLE_FORMAT_STRING] [-f CONFIGURATION_FILE]
                        [-c CUSTOM_NOTIFICATION]
                        INFORMATION
