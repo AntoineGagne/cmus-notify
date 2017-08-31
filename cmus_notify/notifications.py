@@ -1,7 +1,5 @@
 """Contains code related to notifications."""
 
-import notify2
-
 from .constants import (DEFAULT_ICON_PATH,
                         DEFAULT_TIMEOUT,
                         ICONS_BY_STATUS)
@@ -14,6 +12,8 @@ def send_notification(arguments, information):
     :param arguments: The parsed arguments
     :param information: The various song informations
     """
+    import notify2
+
     notify2.init(arguments['application_name'])
     title, text = format_notification_message(information,
                                               title=arguments['title'],
