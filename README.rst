@@ -2,6 +2,12 @@
 cmus-notify
 ===========
 
+.. image:: https://travis-ci.org/AntoineGagne/cmus-notify.svg?branch=master
+    :target: https://travis-ci.org/AntoineGagne/cmus-notify
+
+.. image:: https://img.shields.io/pypi/v/cmus-notify.svg
+        :target: https://pypi.python.org/pypi/cmus-notify
+
 :Author: `Antoine Gagné <antoine.gagne.2@ulaval.ca>`_
 
 .. contents::
