@@ -6,7 +6,7 @@ init:
 
 .PHONY: install
 install:
-	@./setup.py install
+	@./setup.py install --optimize=1 --record=install_log.txt
 
 .PHONY: build
 build:

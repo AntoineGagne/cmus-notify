@@ -2,37 +2,27 @@
 
 import notify2
 
-from .constants import DEFAULT_ICON_PATH, DEFAULT_TIMEOUT
+from .constants import (DEFAULT_ICON_PATH,
+                        DEFAULT_TIMEOUT,
+                        ICONS_BY_STATUS)
+from .formatters import format_notification_message
 
 
-class Notifier:
-    """Notifies the system with a notification.
-    
-    .. note:: Currently, it only works on Linux
+def send_notification(arguments, information):
+    """Send the notification to the OS with a Python library.
+
+    :param arguments: The parsed arguments
+    :param information: The various song informations
     """
-
-    def __init__(self, application_name):
-        """Initialize a :class:`cmus_notify.notifications.Notifier` object.
-
-        :param application_name: The application's name
-        :type application_name: str
-        """
-        self.application_name = application_name
-
-    def send_notification(self, title, text, **kwargs):
-        """Send the notification to the OS with a Python library.
-
-        :param title: The message's title
-        :type title: str
-        :param text: The message's body
-        :type text: str
-        """
-        notify2.init(self.application_name)
-        notification = notify2.Notification(
-            title,
-            text,
-            kwargs.get('icon_path', DEFAULT_ICON_PATH)
-        )
-        notification.set_urgency(kwargs.get('urgency', notify2.URGENCY_LOW))
-        notification.timeout = kwargs.get('timeout', DEFAULT_TIMEOUT)
-        notification.show()
+    notify2.init(arguments['application_name'])
+    title, text = format_notification_message(information,
+                                              title=arguments['title'],
+                                              body=arguments['body'])
+    notification = notify2.Notification(
+        title,
+        text,
+        ICONS_BY_STATUS.get('icon_path', DEFAULT_ICON_PATH)
+    )
+    notification.set_urgency(arguments.get('urgency', notify2.URGENCY_LOW))
+    notification.timeout = arguments.get('timeout', DEFAULT_TIMEOUT)
+    notification.show()
