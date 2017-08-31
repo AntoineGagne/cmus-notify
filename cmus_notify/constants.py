@@ -1,5 +1,6 @@
 """Contains the constants used by the library."""
 
+
 #: Default text for the display values
 DEFAULT_STATUS_DISPLAY = 'N/A'
 #: The various field contained in the metadata

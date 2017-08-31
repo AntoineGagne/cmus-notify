@@ -532,3 +532,5 @@ data/
 *.jpeg
 *.bmp
 *.gif
+.mypy_cache/
+install_log.txt

@@ -66,4 +66,13 @@ def parse_arguments():
                         help='The path to the configuration file. If it is not '
                              'specified, the program will use the default '
                              'values of the other options.')
+    parser.add_argument('-c',
+                        '--custom_notification',
+                        required=False,
+                        default=SUPPRESS,
+                        type=str,
+                        help='The path to a custom implementation of the '
+                             'notification class. If it is not specified, the '
+                             'standard implementation will be used (the one using '
+                             'notify2).')
     return parser.parse_args()

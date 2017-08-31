@@ -81,11 +81,12 @@ You can also specify a configuration to read these values from. By default, the 
 
     [notifications]
         application_name = Cmus
+        custom_notification = /home/user/.cmus/custom_notification.py
 
     [format]
         title = Now playing: {title} by {artist}
         body = <b>Album:</b> {album}
-            <b>Duration:</b> {duration}
+               <b>Duration:</b> {duration}
 
 The options accepts the same values as their command-line options equivalent.
 
@@ -102,8 +103,9 @@ which will display the following prompt:
 
 ::
 
-    usage: cmus_notify [-h] [-a APPLICATION_NAME] [-b BODY_FORMAT_STRING]
+    usage: cmus_notify [-h] [-a APPLICATION_NAME] [- BODY_FORMAT_STRING]
                        [-t TITLE_FORMAT_STRING] [-f CONFIGURATION_FILE]
+                       [-c CUSTOM_NOTIFICATION]
                        INFORMATION
 
     Display a notification about Cmus's current status
@@ -131,6 +133,11 @@ which will display the following prompt:
                             The path to the configuration file. If it is not
                             specified, the program will use the default values of
                             the other options.
+      -c CUSTOM_NOTIFICATION, --custom_notification CUSTOM_NOTIFICATION
+                            The path to a custom implementation of the
+                            notification class. If it is not specified, the
+                            standard implementation will be used (the one using
+                            notify2).
 
     Format String Parameters
     ========================
