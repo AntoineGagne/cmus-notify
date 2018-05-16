@@ -22,7 +22,7 @@ def load_notifier(arguments):
     :param arguments: The parsed arguments
     :returns: The notifier to be used for the notifications
     """
-    custom_notifier_path = arguments['custom_notification']
+    custom_notifier_path = arguments.get('custom_notification', None)
     if custom_notifier_path:
         sys.path.insert(0, os.path.expanduser(os.path.dirname(custom_notifier_path)))
         notifier_module = importlib.import_module(os.path.basename(custom_notifier_path))
