@@ -18,7 +18,7 @@ def get_long_description(file_name: str) -> str:
 if __name__ == '__main__':
     setup(
         name='cmus-notify',
-        version='1.3.1',
+        version='1.3.2',
         description='A package for displaying Cmus current status in notifications',
         author='Antoine Gagne',
         keywords='utilities application cli hook cmus notifications',
