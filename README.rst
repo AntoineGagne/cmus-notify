@@ -151,6 +151,7 @@ which will display the following prompt:
     The available arguments to the format strings are the following:
 
       - album: The song's album
+      - albumartist: The song's album's artist
       - artist: The song's artist
       - date: The song's release date
       - discnumber: The song's disc's number
