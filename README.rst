@@ -75,11 +75,11 @@ Customization
 
 If you want you can specify the formatting of the notification by specifying format strings. For example:
 
-::
+.. codeblock :: sh
 
     #! /bin/sh
 
-    cmus_notify --title "Now playing: {title} by {artist}" --body "<b>Album:</b> {album}\n<b>Duration:</b> {duration}" "$*"
+    cmus_notify --title "Now playing: {title} by {artist}" --body "$(printf "<b>Album:</b> {album}\n<b>Duration:</b> {duration}")" "$*"
 
 You can also specify a configuration to read these values from. By default, the program will search for a configuration file named ``~/.cmus-notify``. It has the following format:
 
