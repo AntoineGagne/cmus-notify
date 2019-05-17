@@ -13,7 +13,8 @@ FIELDS = (
     'tracknumber',
     'title',
     'date',
-    'duration'
+    'duration',
+    'albumartist'
 )
 #: The icons by the media player status
 ICONS_BY_STATUS = {

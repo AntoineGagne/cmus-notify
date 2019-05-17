@@ -25,7 +25,8 @@ def parse_status_information(informations):
 
     return _format_status_information_fields(
         status_information,
-        _format_artist_field,
+        partial(_format_artist_field, 'artist'),
+        partial(_format_artist_field, 'albumartist'),
         _format_duration_field,
         partial(_format_integer_field, 'tracknumber'),
         partial(_format_integer_field, 'discnumber'),
@@ -53,7 +54,7 @@ def _format_status_information_fields(status_information, *formatters):
     )
 
 
-def _format_artist_field(status_information):
+def _format_artist_field(field_name, status_information):
     """Format the *artist* field.
 
     :param status_information: The various fields information
@@ -61,7 +62,7 @@ def _format_artist_field(status_information):
     :returns: The updated status informations
     :rtype: :class:`collections.defaultdict`
     """
-    status_information['artist'] = ' '.join(status_information['artist'])
+    status_information[field_name] = ' '.join(status_information[field_name])
     return status_information
 
 

@@ -13,6 +13,7 @@ class StatusInformation:
 
         :Keyword Arguments:
             * *album* (``str``) --- The name of the song's album
+            * *albumartist* (``str``) --- The name of the album's artist
             * *artist* (``str``) --- The name of the song's artist(s)
             * *date* (``str``) --- The date at which the song was composed
             * *discnumber* (``int``) --- The disc's number
@@ -23,6 +24,7 @@ class StatusInformation:
             * *tracknumber* (``int``) --- The song's number
         """
         self.album = kwargs.get('album', DEFAULT_STATUS_DISPLAY)
+        self.albumartist = kwargs.get('albumartist', DEFAULT_STATUS_DISPLAY)
         self.artist = kwargs.get('artist', DEFAULT_STATUS_DISPLAY)
         self.date = kwargs.get('date', DEFAULT_STATUS_DISPLAY)
         self.discnumber = kwargs.get('discnumber', DEFAULT_STATUS_DISPLAY)
