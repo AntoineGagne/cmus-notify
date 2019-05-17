@@ -29,19 +29,19 @@ Installation
 
 To install this program, you can simply run the following command:
 
-.. codeblock:: sh
+.. code-block:: sh
 
     python setup.py install
 
 This program can also be found on `Pypi <https://pypi.python.org/pypi?:action=display&name=cmus-notify>`_ which means you can install it by downloading the wheel or by using the following command:
 
-.. codeblock:: sh
+.. code-block:: sh
 
     pip install cmus-notify
 
 You can check if it installed correctly by doing the following command:
 
-.. codeblock:: sh
+.. code-block:: sh
 
     cmus_notify -h
 
@@ -52,7 +52,7 @@ Hooking To Cmus
 
 To hook this program to ``cmus``, you have to create a shell script that have the following lines in it:
 
-.. codeblock:: sh
+.. code-block:: sh
 
     #! /bin/sh
 
@@ -60,13 +60,13 @@ To hook this program to ``cmus``, you have to create a shell script that have th
 
 Then, you must make the file executable by using the following command (assuming your script's name is ``cmus_notify.sh``):
 
-.. codeblock:: sh
+.. code-block:: sh
 
     chmod +x cmus_notify.sh
 
 Finally, once you are in ``cmus``, you can add the hook by using the following command:
 
-.. codeblock:: sh
+.. code-block:: vim
 
     :set status_display_program=<path-to-the-shell-script>
 
@@ -75,7 +75,7 @@ Customization
 
 If you want you can specify the formatting of the notification by specifying format strings. For example:
 
-.. codeblock:: sh
+.. code-block:: sh
 
     #! /bin/sh
 
@@ -83,7 +83,7 @@ If you want you can specify the formatting of the notification by specifying for
 
 You can also specify a configuration to read these values from. By default, the program will search for a configuration file named ``~/.cmus-notify``. It has the following format:
 
-.. codeblock:: ini
+.. code-block:: ini
 
     [notifications]
         application_name = Cmus
@@ -101,13 +101,13 @@ Options
 
 To view the full options, you can run the following command:
 
-.. codeblock:: sh
+.. code-block:: sh
 
     cmus_notify --help
 
 which will display the following prompt:
 
-.. codeblock:: text
+.. code-block:: text
 
     usage: cmus_notify [-h] [-a APPLICATION_NAME] [-b BODY_FORMAT_STRING]
                        [-t TITLE_FORMAT_STRING] [-f CONFIGURATION_FILE]
