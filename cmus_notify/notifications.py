@@ -21,7 +21,7 @@ def send_notification(arguments, information):
     notification = notify2.Notification(
         title,
         text,
-        ICONS_BY_STATUS.get('icon_path', DEFAULT_ICON_PATH)
+        ICONS_BY_STATUS.get(information.status.lower(), DEFAULT_ICON_PATH)
     )
     notification.set_urgency(arguments.get('urgency', notify2.URGENCY_LOW))
     notification.timeout = arguments.get('timeout', DEFAULT_TIMEOUT)
