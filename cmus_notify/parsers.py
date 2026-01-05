@@ -25,13 +25,13 @@ def parse_status_information(informations):
 
     return _format_status_information_fields(
         status_information,
-        partial(_format_artist_field, 'artist'),
-        partial(_format_artist_field, 'albumartist'),
+        partial(_format_artist_field, "artist"),
+        partial(_format_artist_field, "albumartist"),
         _format_duration_field,
-        partial(_format_integer_field, 'tracknumber'),
-        partial(_format_integer_field, 'discnumber'),
+        partial(_format_integer_field, "tracknumber"),
+        partial(_format_integer_field, "discnumber"),
         _format_status_field,
-        _format_left_fields
+        _format_left_fields,
     )
 
 
@@ -49,7 +49,7 @@ def _format_status_information_fields(status_information, *formatters):
         **reduce(
             lambda information, formatter: formatter(information),
             formatters,
-            status_information
+            status_information,
         )
     )
 
@@ -62,7 +62,7 @@ def _format_artist_field(field_name, status_information):
     :returns: The updated status informations
     :rtype: :class:`collections.defaultdict`
     """
-    status_information[field_name] = ' '.join(status_information[field_name])
+    status_information[field_name] = " ".join(status_information[field_name])
     return status_information
 
 
@@ -75,13 +75,10 @@ def _format_duration_field(status_information):
     :rtype: :class:`collections.defaultdict`
     """
     try:
-        duration = int(''.join(status_information['duration']))
-        status_information['duration'] = '{0:02d}:{1:02d}'.format(
-            duration // 60,
-            duration % 60
-        )
+        duration = int("".join(status_information["duration"]))
+        status_information["duration"] = "{0:02d}:{1:02d}".format(duration // 60, duration % 60)
     except ValueError:
-        status_information.pop('duration', None)
+        status_information.pop("duration", None)
 
     return status_information
 
@@ -94,8 +91,7 @@ def _format_status_field(status_information):
     :returns: The updated status informations
     :rtype: :class:`collections.defaultdict`
     """
-    status_information['status'] = (' '.join(status_information['status'])
-                                       .capitalize())
+    status_information["status"] = " ".join(status_information["status"]).capitalize()
     return status_information
 
 
@@ -110,7 +106,7 @@ def _format_integer_field(field_name, status_information):
     :rtype: :class:`collections.defaultdict`
     """
     try:
-        status_information[field_name] = int(''.join(status_information[field_name]))
+        status_information[field_name] = int("".join(status_information[field_name]))
     except ValueError:
         status_information.pop(field_name, None)
 
@@ -127,7 +123,7 @@ def _format_left_fields(status_information):
     """
     for key, value in status_information.copy().items():
         if isinstance(value, list) and value:
-            status_information[key] = ' '.join(value)
+            status_information[key] = " ".join(value)
         elif not value:
             status_information.pop(key, None)
     return status_information

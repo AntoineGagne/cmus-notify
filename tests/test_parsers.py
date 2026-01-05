@@ -8,21 +8,21 @@ def test_that_given_incomplete_informations_when_parse_status_information_then_i
     status_information = parse_status_information(incomplete_information)
 
     assert status_information.__dict__ == {
-        'albumartist': 'N/A',
-        'artist': 'Daisuke Amaya',
-        'duration': '00:45',
-        'date': '2004',
-        'file': '~/Music/Cave Story/Cave Story/Cave Story OST - 01_41 - Access.m4a',
-        'title': 'Access',
-        'discnumber': 1,
-        'status': 'Playing',
-        'album': 'Cave Story OST',
-        'tracknumber': 'N/A'
+        "albumartist": "N/A",
+        "artist": "Daisuke Amaya",
+        "duration": "00:45",
+        "date": "2004",
+        "file": "~/Music/Cave Story/Cave Story/Cave Story OST - 01_41 - Access.m4a",
+        "title": "Access",
+        "discnumber": 1,
+        "status": "Playing",
+        "album": "Cave Story OST",
+        "tracknumber": "N/A",
     }
 
 
 def test_that_given_empty_informations_when_parse_status_information_then_it_returns_empty_status_information():
-    status_information = parse_status_information('')
+    status_information = parse_status_information("")
     assert status_information.__dict__ == StatusInformation().__dict__
 
 
@@ -32,14 +32,14 @@ def test_that_given_complete_informations_when_parse_status_information_then_it_
     status_information = parse_status_information(incomplete_information)
 
     assert status_information.__dict__ == {
-        'albumartist': 'Daisuke Amaya',
-        'artist': 'Daisuke Amaya',
-        'duration': '00:45',
-        'date': '2004',
-        'file': '~/Music/Cave Story/Cave Story/Cave Story OST - 01_41 - Access.m4a',
-        'title': 'Access',
-        'discnumber': 1,
-        'status': 'Playing',
-        'album': 'Cave Story OST',
-        'tracknumber': 1
+        "albumartist": "Daisuke Amaya",
+        "artist": "Daisuke Amaya",
+        "duration": "00:45",
+        "date": "2004",
+        "file": "~/Music/Cave Story/Cave Story/Cave Story OST - 01_41 - Access.m4a",
+        "title": "Access",
+        "discnumber": 1,
+        "status": "Playing",
+        "album": "Cave Story OST",
+        "tracknumber": 1,
     }

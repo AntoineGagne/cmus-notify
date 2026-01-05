@@ -23,13 +23,13 @@ class StatusInformation:
             * *title* (``str``) --- The song's title
             * *tracknumber* (``int``) --- The song's number
         """
-        self.album = kwargs.get('album', DEFAULT_STATUS_DISPLAY)
-        self.albumartist = kwargs.get('albumartist', DEFAULT_STATUS_DISPLAY)
-        self.artist = kwargs.get('artist', DEFAULT_STATUS_DISPLAY)
-        self.date = kwargs.get('date', DEFAULT_STATUS_DISPLAY)
-        self.discnumber = kwargs.get('discnumber', DEFAULT_STATUS_DISPLAY)
-        self.duration = kwargs.get('duration', DEFAULT_STATUS_DISPLAY)
-        self.file = kwargs.get('file', DEFAULT_STATUS_DISPLAY)
-        self.status = kwargs.get('status', DEFAULT_STATUS_DISPLAY)
-        self.title = kwargs.get('title', DEFAULT_STATUS_DISPLAY)
-        self.tracknumber = kwargs.get('tracknumber', DEFAULT_STATUS_DISPLAY)
+        self.album = kwargs.get("album", DEFAULT_STATUS_DISPLAY)
+        self.albumartist = kwargs.get("albumartist", DEFAULT_STATUS_DISPLAY)
+        self.artist = kwargs.get("artist", DEFAULT_STATUS_DISPLAY)
+        self.date = kwargs.get("date", DEFAULT_STATUS_DISPLAY)
+        self.discnumber = kwargs.get("discnumber", DEFAULT_STATUS_DISPLAY)
+        self.duration = kwargs.get("duration", DEFAULT_STATUS_DISPLAY)
+        self.file = kwargs.get("file", DEFAULT_STATUS_DISPLAY)
+        self.status = kwargs.get("status", DEFAULT_STATUS_DISPLAY)
+        self.title = kwargs.get("title", DEFAULT_STATUS_DISPLAY)
+        self.tracknumber = kwargs.get("tracknumber", DEFAULT_STATUS_DISPLAY)
