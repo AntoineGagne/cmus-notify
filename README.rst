@@ -2,8 +2,8 @@
 cmus-notify
 ===========
 
-.. image:: https://travis-ci.org/AntoineGagne/cmus-notify.svg?branch=master
-    :target: https://travis-ci.org/AntoineGagne/cmus-notify
+.. image:: https://github.com/AntoineGagne/cmus-notify/actions/workflows/check.yaml/badge.svg?branch=master
+    :target: https://github.com/AntoineGagne/cmus-notify/actions/workflows/check.yaml
 
 .. image:: https://img.shields.io/pypi/v/cmus-notify.svg
         :target: https://pypi.python.org/pypi/cmus-notify
