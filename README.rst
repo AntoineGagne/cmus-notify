@@ -20,9 +20,7 @@ Requirements
 
 To install this program, you must have the following:
 
-- ``python 3.5+``
-- The Python library ``notify2``
-- ``notify-send``
+- ``python 3.9+``
 
 Installation
 ============
