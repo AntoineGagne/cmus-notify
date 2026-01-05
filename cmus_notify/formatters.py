@@ -9,8 +9,6 @@ def format_notification_message(status_information, **kwargs):
     :param status_information: The information to be sent
     :type status_information: :class:`cmus_notify.types.StatusInformation`
     """
-    title = (kwargs.get('title', DEFAULT_MESSAGE_TITLE)
-                   .format(**status_information.__dict__))
-    text = (kwargs.get('body', DEFAULT_MESSAGE_BODY)
-                  .format(**status_information.__dict__))
+    title = kwargs.get("title", DEFAULT_MESSAGE_TITLE).format(**status_information.__dict__)
+    text = kwargs.get("body", DEFAULT_MESSAGE_BODY).format(**status_information.__dict__)
     return title, text

@@ -1,8 +1,8 @@
 """Contains code related to notifications."""
 
-from .constants import (DEFAULT_ICON_PATH,
-                        DEFAULT_TIMEOUT,
-                        ICONS_BY_STATUS)
+import asyncio
+
+from .constants import DEFAULT_ICON_PATH, DEFAULT_TIMEOUT, ICONS_BY_STATUS
 from .formatters import format_notification_message
 
 
@@ -12,17 +12,13 @@ def send_notification(arguments, information):
     :param arguments: The parsed arguments
     :param information: The various song informations
     """
-    import notify2
+    from desktop_notify.aio import Notify
 
-    notify2.init(arguments['application_name'])
-    title, text = format_notification_message(information,
-                                              title=arguments['title'],
-                                              body=arguments['body'])
-    notification = notify2.Notification(
-        title,
-        text,
-        ICONS_BY_STATUS.get(information.status.lower(), DEFAULT_ICON_PATH)
+    title, text = format_notification_message(
+        information, title=arguments["title"], body=arguments["body"]
     )
-    notification.set_urgency(arguments.get('urgency', notify2.URGENCY_LOW))
-    notification.timeout = arguments.get('timeout', DEFAULT_TIMEOUT)
-    notification.show()
+    notification = Notify(title, text)
+    notification.set_icon(
+        ICONS_BY_STATUS.get(information.status.lower(), DEFAULT_ICON_PATH)
+    ).set_timeout(arguments.get("timeout", DEFAULT_TIMEOUT))
+    asyncio.run(notification.show())

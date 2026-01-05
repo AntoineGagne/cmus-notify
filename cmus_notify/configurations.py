@@ -8,10 +8,10 @@ from .options import parse_arguments
 
 def parse_configuration_file():
     """Parse the configuration file. If there are any command-line arguments,
-       override the configuration values with the one from the command line.
+    override the configuration values with the one from the command line.
 
-       :returns: The various options
-       :rtype: dict
+    :returns: The various options
+    :rtype: dict
     """
     arguments = parse_arguments()
     configuration_parser = ConfigParser()
